@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.valekseev.helloworld">
+    <class name="Author" table="author">
+        <id name="authorId" column="authorid">
+            <generator class="increment"/>
+        </id>
+        <property name="firstName" column="author_firstname"/>
+        <property name="lastName" column="author_lastname"/>
+        <property name="age" column="author_age"/>
+
+        <set name="emailAddresses" table="PERSON_EMAIL_ADDR">
+            <key column="AUTHOR_ID"/>
+            <element type="string" column="EMAIL_ADDR"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

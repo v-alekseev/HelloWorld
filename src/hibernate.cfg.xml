@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/testdb</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.username">postgres</property>
+    <property name="connection.password">sa</property>
+    <!-- DB schema will be updated if needed -->
+    <property name="hbm2ddl.auto">update</property>
+      <!-- Echo all executed SQL to stdout -->
+      <property name="show_sql">true</property>
+
+      <!-- Mapping files -->
+
+      <mapping resource="com/valekseev/helloworld/Book.hbm.xml"/>
+      <mapping resource="com/valekseev/helloworld/Entity/Author.hbm.xml"/>
+
+</session-factory>
+
+
+
+</hibernate-configuration>
