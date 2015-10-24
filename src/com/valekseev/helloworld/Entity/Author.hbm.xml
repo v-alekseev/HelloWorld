@@ -16,5 +16,10 @@
             <element type="string" column="EMAIL_ADDR"/>
         </set>
 
+        <set name="books" table="AUTHOR_BOOK">
+            <key column="AUTHOR_ID"/>
+            <many-to-many column="BOOK_ID" class="com.valekseev.helloworld.Book"/>
+        </set>
+
     </class>
 </hibernate-mapping>

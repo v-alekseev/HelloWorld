@@ -12,7 +12,7 @@ public class Author {
     private Integer age;
 
     private Set emailAddresses = new HashSet();
-
+    private Set books = new HashSet();
 
 
     public Author(){
@@ -69,9 +69,17 @@ public class Author {
         this.emailAddresses = emailAddresses;
     }
 
+    public Set getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set books) {
+        this.books = books;
+    }
+
     @Override
     public String toString(){
-      return "Author name - " + firstName + " " + lastName + "; age - " +  age + "; id = " + authorId;
+      return "Author name - " + firstName + " " + lastName + "; age - " +  age + "; id = " + authorId  + "; books = " + books.size();
 
     }
 
