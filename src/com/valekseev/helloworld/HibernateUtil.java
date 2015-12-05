@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
+//import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory;
@@ -17,8 +19,9 @@ public class HibernateUtil {
             configuration.addResource("hibernate.cfg.xml");
             configuration.configure();
             // 4.3 > StandardServiceRegistryBuilder()
-            serviceRegistry = new ServiceRegistryBuilder().applySettings(
-                    configuration.getProperties()). buildServiceRegistry();
+            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()). buildServiceRegistry();
+          //  serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
             //sessionFactory = new Configuration().configure().buildSessionFactory();
